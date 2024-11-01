@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\hat-core1.png",
+      "PackagePath": "staticwebassets\\Images\\products\\hat-core1.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\hat-react1.png",
+      "PackagePath": "staticwebassets\\Images\\products\\hat-react1.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\hat-react2.png",
+      "PackagePath": "staticwebassets\\Images\\products\\hat-react2.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\sb-ang1.png",
+      "PackagePath": "staticwebassets\\Images\\products\\sb-ang1.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\sb-ang2.png",
+      "PackagePath": "staticwebassets\\Images\\products\\sb-ang2.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\sb-core1.png",
+      "PackagePath": "staticwebassets\\Images\\products\\sb-core1.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\sb-core2.png",
+      "PackagePath": "staticwebassets\\Images\\products\\sb-core2.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\sb-react1.png",
+      "PackagePath": "staticwebassets\\Images\\products\\sb-react1.png"
+    },
+    {
+      "Id": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\wwwroot\\Images\\products\\sb-ts1.png",
+      "PackagePath": "staticwebassets\\Images\\products\\sb-ts1.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Store.APIs.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Store.APIs.props",
+      "PackagePath": "build\\Store.APIs.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Store.APIs.props",
+      "PackagePath": "buildMultiTargeting\\Store.APIs.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Store.APIs.props",
+      "PackagePath": "buildTransitive\\Store.APIs.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
