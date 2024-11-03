@@ -13,3 +13,4 @@ C:\Users\sherif\source\repos\MyStore.Solution\Store.Repository\obj\Debug\net8.0\
 C:\Users\sherif\source\repos\MyStore.Solution\Store.Repository\obj\Debug\net8.0\refint\Store.Repository.dll
 C:\Users\sherif\source\repos\MyStore.Solution\Store.Repository\obj\Debug\net8.0\Store.Repository.pdb
 C:\Users\sherif\source\repos\MyStore.Solution\Store.Repository\obj\Debug\net8.0\ref\Store.Repository.dll
+C:\Users\sherif\source\repos\MyStore.Solution\Store.Repository\obj\Debug\net8.0\Store.Repository.sourcelink.json

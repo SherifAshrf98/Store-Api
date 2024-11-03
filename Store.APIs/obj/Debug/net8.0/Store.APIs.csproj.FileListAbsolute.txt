@@ -146,3 +146,4 @@ C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\refint
 C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\Store.APIs.pdb
 C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\Store.APIs.genruntimeconfig.cache
 C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\ref\Store.APIs.dll
+C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\Store.APIs.sourcelink.json

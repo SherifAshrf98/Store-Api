@@ -1,12 +1,22 @@
 [
   {
     "ContainingType": "Store.APIs.Controllers.ProductsController",
-    "Method": "GetProducts",
+    "Method": "GetAllProducts",
     "RelativePath": "api/Products",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
       {
         "Name": "sort",
         "Type": "System.String",
@@ -25,7 +35,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Store.Core.Entities.Product, Store.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Store.APIs.DTOs.ProductToReturnDto, Store.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -51,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Store.Core.Entities.Product",
+        "Type": "Store.APIs.DTOs.ProductToReturnDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

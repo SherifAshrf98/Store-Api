@@ -30,7 +30,7 @@ namespace Store.APIs.Controllers
 
 
 		[HttpGet]
-		public async Task<ActionResult<IReadOnlyList<Product>>> GetAllProducts([FromQuery]ProductSpecParams specParams)
+		public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts([FromQuery]ProductSpecParams specParams)
 		{
 			var spec = new ProductWithBrandAndType(specParams);
 
@@ -44,7 +44,7 @@ namespace Store.APIs.Controllers
 
 
 		[HttpGet("{id}")]
-		public async Task<ActionResult<Product>> GetProductsById(int id)
+		public async Task<ActionResult<ProductToReturnDto>> GetProductsById(int id)
 		{
 			var spec = new ProductWithBrandAndType(id);
 
