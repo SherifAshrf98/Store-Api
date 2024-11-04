@@ -19,11 +19,14 @@ namespace Store.Repository.Specifications
 			if (spec.Criteria is not null)
 				Query = Query.Where(spec.Criteria);
 
-			if(spec.OrderBy is not null)
+			if (spec.OrderBy is not null)
 				Query = Query.OrderBy(spec.OrderBy);
 
 			else if (spec.OrderByDesc is not null)
 				Query = Query.OrderByDescending(spec.OrderByDesc);
+
+			if (spec.IsPaginationEnabled)
+				Query = Query.Skip(spec.Skip).Take(spec.Take);
 
 			Query = spec.Includes.Aggregate(Query, (CurrentExpresion, IncludeExpression) => CurrentExpresion.Include(IncludeExpression));
 

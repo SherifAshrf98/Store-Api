@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Store.APIs.DTOs;
 using Store.APIs.Errors;
+using Store.APIs.Helpers;
 using Store.Core.Entities;
 using Store.Core.Repositories.Contracts;
 using Store.Repository.Specifications.product_specs;
@@ -30,15 +31,19 @@ namespace Store.APIs.Controllers
 
 
 		[HttpGet]
-		public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts([FromQuery]ProductSpecParams specParams)
+		public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetAllProducts([FromQuery]ProductSpecParams specParams)
 		{
 			var spec = new ProductWithBrandAndType(specParams);
 
 			var products = await _productsRepo.GetAllWithSpecAsync(spec);
 
+			var CountSpec = new ProductFiltrationForCountSpecs(specParams);
+
+			var count = await _productsRepo.GetCountAsync(CountSpec);
+
 			var mappedProduct = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
 
-			return Ok(mappedProduct);
+			return Ok(new Pagination<ProductToReturnDto>(specParams.PageSize, specParams.PageIndex,count, mappedProduct));
 		}
 
 

@@ -9,3 +9,4 @@ C:\Users\sherif\source\repos\MyStore.Solution\Store.Core\obj\Debug\net8.0\Store.
 C:\Users\sherif\source\repos\MyStore.Solution\Store.Core\obj\Debug\net8.0\refint\Store.Core.dll
 C:\Users\sherif\source\repos\MyStore.Solution\Store.Core\obj\Debug\net8.0\Store.Core.pdb
 C:\Users\sherif\source\repos\MyStore.Solution\Store.Core\obj\Debug\net8.0\ref\Store.Core.dll
+C:\Users\sherif\source\repos\MyStore.Solution\Store.Core\obj\Debug\net8.0\Store.Core.sourcelink.json

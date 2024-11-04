@@ -31,11 +31,16 @@
         "Name": "categoryid",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Store.APIs.DTOs.ProductToReturnDto, Store.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Store.APIs.Helpers.Pagination\u00601[[Store.APIs.DTOs.ProductToReturnDto, Store.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

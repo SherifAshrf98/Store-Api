@@ -10,7 +10,7 @@ namespace Store.Repository.Specifications.product_specs
 	{
 		private const int maxpagesize = 10;
 
-		private int pagesize;
+		private int pagesize = 5;
 
 		public int PageSize
 		{
@@ -25,5 +25,14 @@ namespace Store.Repository.Specifications.product_specs
 		public int? brandid { get; set; }
 
 		public int? categoryid { get; set; }
+
+		private string? search;
+
+		public string? Search
+		{
+			get { return search; }
+			set { search = value?.ToLower(); }
+		}
+
 	}
 }

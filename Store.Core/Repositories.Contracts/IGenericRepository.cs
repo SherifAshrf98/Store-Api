@@ -13,5 +13,6 @@ namespace Store.Core.Repositories.Contracts
 		Task<IReadOnlyList<T>> GetAllAsync();	
 		Task<T?> GetByIdWithSpecAsync(ISpecifications<T> spec);
 		Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISpecifications<T> spec);
+		Task<int> GetCountAsync(ISpecifications<T> spec);
 	}
 }

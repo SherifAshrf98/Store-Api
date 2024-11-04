@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Azure;
+using Microsoft.IdentityModel.Tokens;
 using Store.Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,12 @@ namespace Store.Repository.Specifications.product_specs
 	{
 		public ProductWithBrandAndType(ProductSpecParams specParams) : base
 			(
-			  p => (!specParams.brandid.HasValue || p.BrandId == specParams.brandid.Value) && (!specParams.categoryid.HasValue || p.CategoryId == specParams.categoryid.Value)
+			  p =>
+			  (string.IsNullOrEmpty(specParams.Search) || p.Name.Contains(specParams.Search.ToLower())) &&
+			  (!specParams.brandid.HasValue || p.BrandId == specParams.brandid.Value) && 
+			  (!specParams.categoryid.HasValue || p.CategoryId == specParams.categoryid.Value)
 			)
+
 		{
 			Includes.Add(P => P.Brand);
 			Includes.Add(P => P.Category);
@@ -41,6 +46,13 @@ namespace Store.Repository.Specifications.product_specs
 			else
 				OrderBy = (P => P.Name);
 
+			// 100 item
+			//pagesize = 20   100 / 20   5 page index
+
+			// page index 3
+			//3 - 1 * 20    20                    20 20 =>20 20 20
+			ApplyPagination((specParams.PageIndex - 1) * specParams.PageSize, specParams.PageSize);
+
 		}
 
 		public ProductWithBrandAndType(int id) : base(P => P.Id == id)
@@ -48,6 +60,8 @@ namespace Store.Repository.Specifications.product_specs
 			Includes.Add(P => P.Brand);
 			Includes.Add(P => P.Category);
 		}
+
+
 
 	}
 }

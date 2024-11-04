@@ -17,7 +17,11 @@ namespace Store.Core
 		Expression<Func<T, object>> OrderBy { get; set; }
 
 		Expression<Func<T, object>> OrderByDesc { get; set; }
+		
+		int Skip { get; set; }
 
+		int Take { get; set; }
+
+		bool IsPaginationEnabled { get; set; }
 	}
-
 }

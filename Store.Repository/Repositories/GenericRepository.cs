@@ -38,9 +38,21 @@ namespace Store.Repository.Repositories
 
 		public async Task<T?> GetByIdWithSpecAsync(ISpecifications<T> spec)
 		{
-			return await SpecificationEvaluator<T>.GetQuery(_storeContext.Set<T>(), spec).FirstOrDefaultAsync();
+			return await ApplySpecifications(spec).FirstOrDefaultAsync();
 		}
 
+		public async Task<int> GetCountAsync(ISpecifications<T> spec)
+		{
+			return await ApplySpecifications(spec).CountAsync();
+		}
+
+
+
+		private IQueryable<T> ApplySpecifications(ISpecifications<T> spec)
+		{
+			return SpecificationEvaluator<T>.GetQuery(_storeContext.Set<T>(), spec);
+		}
 	}
+	
 }
 
