@@ -46,8 +46,6 @@ namespace Store.Repository.Repositories
 			return await ApplySpecifications(spec).CountAsync();
 		}
 
-
-
 		private IQueryable<T> ApplySpecifications(ISpecifications<T> spec)
 		{
 			return SpecificationEvaluator<T>.GetQuery(_storeContext.Set<T>(), spec);

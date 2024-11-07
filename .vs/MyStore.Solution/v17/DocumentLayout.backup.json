@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{031AF0B9-34DB-4266-BABF-3219B9A5FE05}|Store.APIs\\Store.APIs.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.apis\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{031AF0B9-34DB-4266-BABF-3219B9A5FE05}|Store.APIs\\Store.APIs.csproj|solutionrelative:store.apis\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{031AF0B9-34DB-4266-BABF-3219B9A5FE05}|Store.APIs\\Store.APIs.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.apis\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{031AF0B9-34DB-4266-BABF-3219B9A5FE05}|Store.APIs\\Store.APIs.csproj|solutionrelative:store.apis\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.repository\\specifications\\product specs\\productwithbrandandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|solutionrelative:store.repository\\specifications\\product specs\\productwithbrandandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.repository\\specifications\\product specs\\productspecparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|solutionrelative:store.repository\\specifications\\product specs\\productspecparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.repository\\specifications\\product specs\\productfiltrationforcountspecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|solutionrelative:store.repository\\specifications\\product specs\\productfiltrationforcountspecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|solutionrelative:store.repository\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4156254-B5DC-48C9-A44E-61CBB43DD020}|Store.Core\\Store.Core.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.core\\repositories.contracts\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4156254-B5DC-48C9-A44E-61CBB43DD020}|Store.Core\\Store.Core.csproj|solutionrelative:store.core\\repositories.contracts\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{031AF0B9-34DB-4266-BABF-3219B9A5FE05}|Store.APIs\\Store.APIs.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.apis\\controllers\\errorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{031AF0B9-34DB-4266-BABF-3219B9A5FE05}|Store.APIs\\Store.APIs.csproj|solutionrelative:store.apis\\controllers\\errorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|c:\\users\\sherif\\source\\repos\\mystore.solution\\store.repository\\repositories\\basketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79483C70-402A-4D68-AE89-149B8DA539D9}|Store.Repository\\Store.Repository.csproj|solutionrelative:store.repository\\repositories\\basketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,93 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductSpecParams.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Specifications\\product specs\\ProductSpecParams.cs",
-              "RelativeDocumentMoniker": "Store.Repository\\Specifications\\product specs\\ProductSpecParams.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Specifications\\product specs\\ProductSpecParams.cs",
-              "RelativeToolTip": "Store.Repository\\Specifications\\product specs\\ProductSpecParams.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:44:11.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Store.Repository\\Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "Store.Repository\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwDQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:40:48.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Core\\Repositories.Contracts\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Store.Core\\Repositories.Contracts\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Core\\Repositories.Contracts\\IGenericRepository.cs",
-              "RelativeToolTip": "Store.Core\\Repositories.Contracts\\IGenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:40:39.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ErrorsController.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\Controllers\\ErrorsController.cs",
-              "RelativeDocumentMoniker": "Store.APIs\\Controllers\\ErrorsController.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\Controllers\\ErrorsController.cs",
-              "RelativeToolTip": "Store.APIs\\Controllers\\ErrorsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:39:07.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Store.APIs\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Store.APIs\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAawCcAAAADAAAAAAAAAA==",
+              "Title": "BasketController.cs",
+              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\Controllers\\BasketController.cs",
+              "RelativeDocumentMoniker": "Store.APIs\\Controllers\\BasketController.cs",
+              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.APIs\\Controllers\\BasketController.cs",
+              "RelativeToolTip": "Store.APIs\\Controllers\\BasketController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:39:04.561Z",
+              "WhenOpened": "2024-11-06T03:44:47.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductWithBrandAndType.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Specifications\\product specs\\ProductWithBrandAndType.cs",
-              "RelativeDocumentMoniker": "Store.Repository\\Specifications\\product specs\\ProductWithBrandAndType.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Specifications\\product specs\\ProductWithBrandAndType.cs",
-              "RelativeToolTip": "Store.Repository\\Specifications\\product specs\\ProductWithBrandAndType.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwDcAAAACAAAAAAAAAA==",
+              "Title": "BasketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Repositories\\BasketRepository.cs",
+              "RelativeDocumentMoniker": "Store.Repository\\Repositories\\BasketRepository.cs",
+              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Repositories\\BasketRepository.cs",
+              "RelativeToolTip": "Store.Repository\\Repositories\\BasketRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:38:35.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductFiltrationForCountSpecs.cs",
-              "DocumentMoniker": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Specifications\\product specs\\ProductFiltrationForCountSpecs.cs",
-              "RelativeDocumentMoniker": "Store.Repository\\Specifications\\product specs\\ProductFiltrationForCountSpecs.cs",
-              "ToolTip": "C:\\Users\\sherif\\source\\repos\\MyStore.Solution\\Store.Repository\\Specifications\\product specs\\ProductFiltrationForCountSpecs.cs",
-              "RelativeToolTip": "Store.Repository\\Specifications\\product specs\\ProductFiltrationForCountSpecs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T14:16:09.476Z",
+              "WhenOpened": "2024-11-05T18:09:32.83Z",
               "EditorCaption": ""
             }
           ]

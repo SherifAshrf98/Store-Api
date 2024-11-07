@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using Store.APIs.Errors;
 using Store.APIs.Helpers;
 using Store.APIs.MiddleWares;
@@ -32,17 +33,23 @@ namespace Store.APIs
 				optionsBuilder.UseSqlServer(ConnectionString);
 			});
 
+			WebApplicationBuilder.Services.AddSingleton<IConnectionMultiplexer>(ServiceProvider =>
+			{
+				var Connection = WebApplicationBuilder.Configuration.GetConnectionString("RedisConnection");
+
+				return ConnectionMultiplexer.Connect(Connection);
+			}
+			);
+
 			WebApplicationBuilder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+			WebApplicationBuilder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
 
 			WebApplicationBuilder.Services.AddAutoMapper(typeof(MappingProfiles));
-
-
 
 			WebApplicationBuilder.Services.Configure<ApiBehaviorOptions>(Options =>
 			{
 				Options.InvalidModelStateResponseFactory = (actionContext) =>
 				{
-
 					var errors = actionContext.ModelState.Where(P => P.Value.Errors.Count() > 0)
 					.SelectMany(P => P.Value.Errors)
 					.Select(E => E.ErrorMessage)
@@ -84,7 +91,6 @@ namespace Store.APIs
 				var logger = LoggerFactory.CreateLogger<Program>();
 				logger.LogError(ex, "An Error Occured During Apply The Migration");
 			}
-
 			#endregion
 
 			#region Configure PipeLines

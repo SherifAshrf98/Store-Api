@@ -147,3 +147,5 @@ C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\Store.
 C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\Store.APIs.genruntimeconfig.cache
 C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\ref\Store.APIs.dll
 C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\obj\Debug\net8.0\Store.APIs.sourcelink.json
+C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\sherif\source\repos\MyStore.Solution\Store.APIs\bin\Debug\net8.0\StackExchange.Redis.dll
