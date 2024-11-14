@@ -1,13 +1,20 @@
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using StackExchange.Redis;
 using Store.APIs.Errors;
+using Store.APIs.Extensions;
 using Store.APIs.Helpers;
 using Store.APIs.MiddleWares;
+using Store.Core.Entities.Identity;
 using Store.Core.Repositories.Contracts;
 using Store.Repository.Data;
+using Store.Repository.Identity;
 using Store.Repository.Repositories;
+using System.Text;
 
 namespace Store.APIs
 {
@@ -16,8 +23,6 @@ namespace Store.APIs
 		public static async Task Main(string[] args)
 		{
 			var WebApplicationBuilder = WebApplication.CreateBuilder(args);
-
-			var ConnectionString = WebApplicationBuilder.Configuration.GetConnectionString("DefaultConnection");
 
 			// Add services to the container.
 			#region Configure Services
@@ -28,25 +33,28 @@ namespace Store.APIs
 
 			WebApplicationBuilder.Services.AddSwaggerGen();
 
-			WebApplicationBuilder.Services.AddDbContext<StoreContext>(optionsBuilder =>
+			WebApplicationBuilder.Services.AddIdentityServices(WebApplicationBuilder.Configuration);
+
+			WebApplicationBuilder.Services.AddApplicationServices();
+
+			WebApplicationBuilder.Services.AddDbContext<StoreContext>((optionsBuilder) =>
 			{
-				optionsBuilder.UseSqlServer(ConnectionString);
+				optionsBuilder.UseSqlServer(WebApplicationBuilder.Configuration.GetConnectionString("DefaultConnection"));
 			});
 
-			WebApplicationBuilder.Services.AddSingleton<IConnectionMultiplexer>(ServiceProvider =>
+			WebApplicationBuilder.Services.AddDbContext<AppIdentityDbContext>((OptionsBuilder) =>
+			{
+				OptionsBuilder.UseSqlServer(WebApplicationBuilder.Configuration.GetConnectionString("IdentityConnection"));
+			});
+
+			WebApplicationBuilder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
 			{
 				var Connection = WebApplicationBuilder.Configuration.GetConnectionString("RedisConnection");
 
-				return ConnectionMultiplexer.Connect(Connection);
-			}
-			);
+				return ConnectionMultiplexer.Connect(Connection!);
+			});
 
-			WebApplicationBuilder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-			WebApplicationBuilder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
-
-			WebApplicationBuilder.Services.AddAutoMapper(typeof(MappingProfiles));
-
-			WebApplicationBuilder.Services.Configure<ApiBehaviorOptions>(Options =>
+			WebApplicationBuilder.Services.Configure<ApiBehaviorOptions>((Options) =>
 			{
 				Options.InvalidModelStateResponseFactory = (actionContext) =>
 				{
@@ -68,28 +76,42 @@ namespace Store.APIs
 
 			#region Build The App
 			var app = WebApplicationBuilder.Build();
-
 			#endregion
 
-			#region DataSeeding/ApplyMigrations
+			#region ApplyMigrations/DataSeeding
 
 			var Scope = app.Services.CreateScope();
-
 			var Services = Scope.ServiceProvider;
 
-			var _DbContext = Services.GetRequiredService<StoreContext>();
-
 			var LoggerFactory = Services.GetRequiredService<ILoggerFactory>();
+			var logger = LoggerFactory.CreateLogger<Program>();
 
+
+			var _StoreDbContext = Services.GetRequiredService<StoreContext>();
+
+			var _AppIdentityDbContext = Services.GetRequiredService<AppIdentityDbContext>();
+
+			var userManager = Services.GetRequiredService<UserManager<AppUser>>();
+
+			//Migrating
 			try
 			{
-				await _DbContext.Database.MigrateAsync();
-				await StoreContextSeed.SeedAsync(_DbContext);
+				await _StoreDbContext.Database.MigrateAsync();
+				await _AppIdentityDbContext.Database.MigrateAsync();
 			}
 			catch (Exception ex)
 			{
-				var logger = LoggerFactory.CreateLogger<Program>();
 				logger.LogError(ex, "An Error Occured During Apply The Migration");
+			}
+			//Seeding
+			try
+			{
+				await StoreContextSeed.SeedAsync(_StoreDbContext);
+				await AppIdentityDbContextSeeding.SeedUserAsync(userManager, logger);
+			}
+			catch (Exception ex)
+			{
+				logger.LogError(ex, "An Error Occured During Apply The Seeding");
 			}
 			#endregion
 
@@ -108,6 +130,10 @@ namespace Store.APIs
 			app.UseStaticFiles();
 
 			app.UseHttpsRedirection();
+
+			app.UseAuthentication();
+
+			app.UseAuthorization();
 
 			app.MapControllers();
 
