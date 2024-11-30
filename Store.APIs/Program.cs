@@ -26,9 +26,9 @@ namespace Store.APIs
 
 			WebApplicationBuilder.Services.AddControllers()
 				.AddJsonOptions(options =>
-			{
-				options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-			});
+				{
+					options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+				});
 
 			WebApplicationBuilder.Services.AddIdentityServices(WebApplicationBuilder.Configuration);
 

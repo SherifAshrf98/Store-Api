@@ -1,4 +1,5 @@
 ﻿using Store.Core.Entities;
+using Store.Core.Entities.Order_Aggregate;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,9 +25,8 @@ namespace Store.Repository.Data
 				{
 					foreach (var brand in brands)
 					{
-						DbContext.Set<ProductBrand>().Add(brand);
+						await DbContext.Set<ProductBrand>().AddAsync(brand);
 					}
-					await DbContext.SaveChangesAsync();
 				}
 			}
 
@@ -41,9 +41,8 @@ namespace Store.Repository.Data
 				{
 					foreach (var Category in Categories)
 					{
-						DbContext.Set<ProductCategory>().Add(Category);
+						await DbContext.Set<ProductCategory>().AddAsync(Category);
 					}
-					await DbContext.SaveChangesAsync();
 				}
 			}
 
@@ -58,11 +57,29 @@ namespace Store.Repository.Data
 				{
 					foreach (var product in products)
 					{
-						DbContext.Set<Product>().Add(product);
+						await DbContext.Set<Product>().AddAsync(product);
+					}
+				}
+			}
+
+			if (DbContext.DeliveryMethods.Count() == 0)
+			{
+
+				var DeliveryMethodsdata = File.ReadAllText("../Store.Repository/Data/DataSeed/delivery.json");
+
+				var DeliveryMethods = JsonSerializer.Deserialize<List<DeliveryMethod>>(DeliveryMethodsdata);
+
+				if (DeliveryMethods?.Count > 0)
+				{
+					foreach (var DeliveryMethod in DeliveryMethods)
+					{
+						await DbContext.Set<DeliveryMethod>().AddAsync(DeliveryMethod);
 					}
 					await DbContext.SaveChangesAsync();
 				}
 			}
+
+			await DbContext.SaveChangesAsync();
 		}
 	}
 }
