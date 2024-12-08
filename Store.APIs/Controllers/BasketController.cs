@@ -30,13 +30,12 @@ namespace Store.APIs.Controllers
 		[HttpPost("Update")]
 		public async Task<ActionResult<CustomerBasket?>> UpdateBasket([FromBody] CustomerBasketDto? customerBasketdto)
 		{
-			if (customerBasketdto is null) return BadRequest(new ApiResponse(400));
-
+			
 			var MappedCustomerBasket = _mapper.Map<CustomerBasket>(customerBasketdto);
 
 			var UpdatedOrCreatedBasket = await _basketRepository.UpdateBasketAsync(MappedCustomerBasket);
 
-			if (UpdatedOrCreatedBasket is null) return BadRequest(new ApiResponse(400));
+			if (UpdatedOrCreatedBasket is null) return StatusCode(500, new ApiResponse(500));
 
 			return Ok(UpdatedOrCreatedBasket);
 		}

@@ -35,6 +35,5 @@ namespace Store.Repository.Specifications
 			Take = take;
 			IsPaginationEnabled = true;
 		}
-
 	}
 }

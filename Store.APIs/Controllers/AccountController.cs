@@ -96,7 +96,6 @@ namespace Store.APIs.Controllers
 			var MappedAddress = _mapper.Map<AddressDto>(user.Address);
 
 			return (MappedAddress);
-
 		}
 
 		[Authorize]
@@ -123,11 +122,6 @@ namespace Store.APIs.Controllers
 		{
 			return await _userManager.FindByEmailAsync(email) is not null;
 		}
-
-
-
 	}
-
-
 }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Store.Core;
 using Store.Core.Entities;
 using Store.Core.Repositories.Contracts;
@@ -33,7 +34,7 @@ namespace Store.Repository.Repositories
 
 		public async Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISpecifications<T> spec)
 		{
-			return await SpecificationEvaluator<T>.GetQuery(_storeContext.Set<T>(), spec).ToListAsync();
+			return await ApplySpecifications(spec).ToListAsync();
 		}
 
 		public async Task<T?> GetByIdWithSpecAsync(ISpecifications<T> spec)
@@ -50,7 +51,24 @@ namespace Store.Repository.Repositories
 		{
 			return SpecificationEvaluator<T>.GetQuery(_storeContext.Set<T>(), spec);
 		}
+
+		public async Task<T> AddAsync(T Entity)
+		{
+			var entity = await _storeContext.Set<T>().AddAsync(Entity);
+
+			return entity.Entity;
+		}
+
+		public void Update(T Entity)
+		{
+			_storeContext.Set<T>().Update(Entity);
+		}
+
+		public void Delete(T Entity)
+		{
+			_storeContext.Set<T>().Remove(Entity);
+		}
 	}
-	
+
 }
 
